@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="center" fillWidth="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" spacing="30.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.LoginControlador">
+   <children>
+      <Label text="Iniciar sesión">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <GridPane alignment="CENTER" hgap="10.0" pickOnBounds="false" prefHeight="64.0" prefWidth="366.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints />
+          <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+          <RowConstraints />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="19.0" prefWidth="176.0" text="Numero de identificación" />
+            <TextField fx:id="IdTextField" alignment="TOP_LEFT" prefHeight="27.0" prefWidth="88.0" GridPane.columnIndex="1" />
+            <Label text="Contraseña" GridPane.rowIndex="1" />
+            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="IniciarSesionButton" mnemonicParsing="false" text="Iniciar sesión" />
+   </children>
+</VBox>
