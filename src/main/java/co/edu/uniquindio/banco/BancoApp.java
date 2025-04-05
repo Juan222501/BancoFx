@@ -25,13 +25,31 @@ public class BancoApp extends Application {
 
     private void cargarUsuarios() {
         try {
-            banco.registrarUsuario("1001", "Juan Pérez", "Calle 123", "juan@mail.com", "pass1");
-            banco.registrarUsuario("1002", "Ana Gómez", "Calle 456", "ana@mail.com", "pass2");
+            banco.registrarUsuario("2112", "Santiago Torres", "Calle 07327", "shant@mail.com", "pass21");
+            banco.registrarUsuario("1221", "Daiana Ramirez", "Calle 03727", "more@mail.com", "pass12");
             banco.registrarUsuario("1003", "Luis Torres", "Carrera 12", "luis@mail.com", "pass3");
             banco.registrarUsuario("1004", "María Ríos", "Av. Siempre Viva", "maria@mail.com", "pass4");
             banco.registrarUsuario("1005", "Carlos Díaz", "Calle Luna", "carlos@mail.com", "pass5");
             banco.registrarUsuario("1006", "Laura Sánchez", "Calle Sol", "laura@mail.com", "pass6");
             banco.registrarUsuario("1007", "Pedro Castillo", "Cra. 20 #45", "pedro@mail.com", "pass7");
+
+            BilleteraVirtual billeteraShant = banco.buscarBilleteraUsuario("2112");
+            BilleteraVirtual billeteraMore = banco.buscarBilleteraUsuario("1221");
+
+            String numeroShant = billeteraShant.getNumero();
+            String numeroMore = billeteraMore.getNumero();
+
+            // 3. Recargar (depositar) en la billetera de Shant
+            banco.recargarBilletera(numeroShant, 50);
+
+            // 4. Realizar transferencia de Santiago a Daiana
+            banco.realizarTransferencia(numeroShant, numeroMore, 30, Categoria.RECARGA);
+
+            // 5. Mostrar saldos después de la operación
+            System.out.println("Saldo Santiago: $" + billeteraShant.consultarSaldo());
+            System.out.println("Saldo Daiana: $" + billeteraMore.consultarSaldo());
+            System.out.println(numeroShant);
+            System.out.println(numeroMore);
 
 
         } catch (Exception e) {

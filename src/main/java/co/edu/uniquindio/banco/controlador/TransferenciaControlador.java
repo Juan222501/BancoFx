@@ -88,18 +88,8 @@ public class TransferenciaControlador {
         }
 
 
-        Transaccion transaccion = new Transaccion(
-                generarId(),
-                monto,
-                LocalDateTime.now(),
-                categoriaSeleccionada,
-                billeteraOrigen,
-                billeteraDestino,
-                0f // la comision se define en el método retirar()
-        );
 
-        billeteraOrigen.retirar(monto, transaccion);
-        billeteraDestino.depositar(monto, transaccion);
+        banco.realizarTransferencia(billeteraOrigen.getNumero(), numeroCuentaDestino, monto, categoriaSeleccionada);
 
         mostrarAlerta("Éxito", "Transferencia realizada correctamente.");
         limpiarCampos();

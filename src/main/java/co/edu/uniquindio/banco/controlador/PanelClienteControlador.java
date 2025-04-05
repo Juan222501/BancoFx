@@ -8,6 +8,9 @@ import co.edu.uniquindio.banco.modelo.entidades.Banco;
 import co.edu.uniquindio.banco.modelo.entidades.BilleteraVirtual;
 import co.edu.uniquindio.banco.modelo.entidades.Transaccion;
 import co.edu.uniquindio.banco.modelo.entidades.Usuario;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -19,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class PanelClienteControlador {
 
@@ -65,18 +69,20 @@ public class PanelClienteControlador {
     private Button buttonTransferir;
 
     private final Banco banco = Banco.getInstance();
+    private ObservableList<Transaccion> transacciones = FXCollections.observableArrayList();
+
+
 
     @FXML
     void initialize() {
 
+
+
         ColFecha.setCellValueFactory(celda ->
                 new SimpleStringProperty(celda.getValue().getFecha().toString()));
 
-        ColTipo.setCellValueFactory(celda -> {
-            BilleteraVirtual billeteraActual = this.billetera;
-            String tipo = (celda.getValue().getBilleteraOrigen() == billeteraActual) ? "Salida" : "Entrada";
-            return new SimpleStringProperty(tipo);
-        });
+        ColTipo.setCellValueFactory(celda ->
+                new SimpleStringProperty(celda.getValue().getTipoTransaccion().name()));
 
         ColCategoria.setCellValueFactory(celda ->
                 new SimpleStringProperty(celda.getValue().getTipo().name()));
@@ -92,24 +98,25 @@ public class PanelClienteControlador {
                 new SimpleFloatProperty(celda.getValue().getMonto()).asObject());
 
         buttonTransferir.setOnAction(this::buttonTransferir);
+
+
+
     }
 
     public void inicializarDatos(Usuario usuario) {
         this.usuario = usuario;
         this.billetera = banco.buscarBilleteraUsuario(usuario.getId());
 
-        LabelDeBievenida.setText("¡Bienvenido, " + usuario.getNombre() + "!");
+        LabelDeBievenida.setText("¡Buen día, " + usuario.getNombre() + "!");
         NumeroDeCuentaLabel.setText("Nro. Cuenta: " + billetera.getNumero());
+        actualizarDatosTabla();
 
-        ObservableList<Transaccion> transacciones = billetera.obtenerTransacciones()
-                .stream()
-                .collect(Collectors.toCollection(FXCollections::observableArrayList));
 
-        TablaTransacciones.setItems(transacciones);
     }
 
     public void buttonTransferir(ActionEvent actionEvent) {
         navegarVentana("/transferencia.fxml", "Banco - Panel Cliente");
+        actualizarDatosTabla();
     }
 
     private void navegarVentana(String rutaFxml, String tituloVentana) {
@@ -126,6 +133,7 @@ public class PanelClienteControlador {
             stage.setResizable(false);
             stage.show();
 
+
         } catch (Exception e) {
             crearAlerta("No se pudo abrir la ventana: " + e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
@@ -139,5 +147,14 @@ public class PanelClienteControlador {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+
+    public void actualizarDatosTabla(){
+        transacciones = billetera.obtenerTransacciones()
+                .stream()
+                .collect(Collectors.toCollection(FXCollections::observableArrayList));
+        TablaTransacciones.setItems(transacciones);
+    }
+
+
 
 }

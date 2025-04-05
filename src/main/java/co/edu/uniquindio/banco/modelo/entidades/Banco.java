@@ -2,6 +2,7 @@ package co.edu.uniquindio.banco.modelo.entidades;
 
 import co.edu.uniquindio.banco.config.Constantes;
 import co.edu.uniquindio.banco.modelo.enums.Categoria;
+import co.edu.uniquindio.banco.modelo.enums.TipoTransaccion;
 import co.edu.uniquindio.banco.modelo.vo.PorcentajeGastosIngresos;
 import co.edu.uniquindio.banco.modelo.vo.SaldoTransaccionesBilletera;
 import lombok.Getter;
@@ -86,7 +87,7 @@ public class Banco {
      */
     public void registrarBilletera(Usuario usuario){
         String numero = crearNumeroBilletera();
-        BilleteraVirtual billetera = new BilleteraVirtual(numero, 0, usuario);
+        BilleteraVirtual billetera = new BilleteraVirtual(numero, 5000, usuario);
         billeteras.add(billetera);
     }
 
@@ -188,7 +189,7 @@ public class Banco {
             throw new Exception("La billetera no existe");
         }
 
-        Transaccion transaccion = new Transaccion(
+        Transaccion transaccion = new Transaccion(TipoTransaccion.ENTRADA,
                 UUID.randomUUID().toString(),
                 monto,
                 LocalDateTime.now(),
@@ -213,7 +214,17 @@ public class Banco {
             throw new Exception("Saldo insuficiente");
         }
 
-        Transaccion transaccion = new Transaccion(
+        Transaccion transaccion = new Transaccion(TipoTransaccion.SALIDA,
+                UUID.randomUUID().toString(),
+                monto,
+                LocalDateTime.now(),
+                categoria,
+                billeteraOrigen,
+                billeteraDestino,
+                Constantes.COMISION
+        );
+
+        Transaccion transaccion1 = new Transaccion(TipoTransaccion.ENTRADA,
                 UUID.randomUUID().toString(),
                 monto,
                 LocalDateTime.now(),
@@ -224,7 +235,7 @@ public class Banco {
         );
 
         billeteraOrigen.retirar(monto, transaccion);
-        billeteraDestino.depositar(monto, transaccion);
+        billeteraDestino.depositar(monto, transaccion1);
 
     }
 

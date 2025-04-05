@@ -1,6 +1,7 @@
 package co.edu.uniquindio.banco.modelo.entidades;
 
 import co.edu.uniquindio.banco.config.Constantes;
+import co.edu.uniquindio.banco.modelo.enums.TipoTransaccion;
 import co.edu.uniquindio.banco.modelo.vo.PorcentajeGastosIngresos;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class BilleteraVirtual {
         transaccion.setComision(Constantes.COMISION);
 
         saldo -= montoConComision;
+        System.out.println("Se ha hecho");
         transacciones.add(transaccion);
     }
 
@@ -48,6 +50,7 @@ public class BilleteraVirtual {
         }
 
         saldo += monto;
+        System.out.println("Se ha hecho");
         transacciones.add(transaccion);
     }
 
