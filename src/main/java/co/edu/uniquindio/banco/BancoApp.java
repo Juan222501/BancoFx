@@ -27,11 +27,6 @@ public class BancoApp extends Application {
         try {
             banco.registrarUsuario("2112", "Santiago Torres", "Calle 07327", "shant@mail.com", "pass21");
             banco.registrarUsuario("1221", "Daiana Ramirez", "Calle 03727", "more@mail.com", "pass12");
-            banco.registrarUsuario("1003", "Luis Torres", "Carrera 12", "luis@mail.com", "pass3");
-            banco.registrarUsuario("1004", "María Ríos", "Av. Siempre Viva", "maria@mail.com", "pass4");
-            banco.registrarUsuario("1005", "Carlos Díaz", "Calle Luna", "carlos@mail.com", "pass5");
-            banco.registrarUsuario("1006", "Laura Sánchez", "Calle Sol", "laura@mail.com", "pass6");
-            banco.registrarUsuario("1007", "Pedro Castillo", "Cra. 20 #45", "pedro@mail.com", "pass7");
 
             BilleteraVirtual billeteraShant = banco.buscarBilleteraUsuario("2112");
             BilleteraVirtual billeteraMore = banco.buscarBilleteraUsuario("1221");

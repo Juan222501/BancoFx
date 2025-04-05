@@ -1,9 +1,11 @@
 package co.edu.uniquindio.banco.controlador;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -11,6 +13,12 @@ import javafx.stage.Stage;
  * @author caflorezvi
  */
 public class InicioControlador {
+
+    @FXML
+    private Button irIniciarSesion;
+
+    @FXML
+    private Button irRegistroCliente;
 
     /**
      * Método que permite ir a la vista de Iniciar Sesión
@@ -52,8 +60,16 @@ public class InicioControlador {
             // Mostrar la nueva ventana
             stage.show();
 
+            cerrarVentana();
+
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void cerrarVentana(){
+        Stage ventanaActual = (Stage) irIniciarSesion.getScene().getWindow();
+        ventanaActual.close();
+
     }
 }

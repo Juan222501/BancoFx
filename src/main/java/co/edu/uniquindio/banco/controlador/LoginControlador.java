@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.banco.modelo.entidades.Banco;
+import co.edu.uniquindio.banco.modelo.entidades.Sesion;
 import co.edu.uniquindio.banco.modelo.entidades.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,9 +18,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginControlador {
-    private Usuario usuario;
     @FXML
     private ResourceBundle resources;
+
 
     @FXML
     private URL location;
@@ -33,7 +34,8 @@ public class LoginControlador {
     @FXML
     private PasswordField passwordField;
 
-    private final Banco banco = Banco.getInstance(); // Singleton
+    private final Banco banco = Banco.getInstance();
+    Sesion sesion = Sesion.getInstancia(); // Singleton
 
     @FXML
     void initialize() {
@@ -59,7 +61,9 @@ public class LoginControlador {
                 return;
             }
 
-            usuario = banco.buscarUsuario(id);
+            Usuario usuario = banco.buscarUsuario(id);
+
+            sesion.setUsuario(usuario);
 
             crearAlerta("Inicio de sesión exitoso", Alert.AlertType.INFORMATION);
             cerrarVentana();
@@ -94,7 +98,6 @@ public class LoginControlador {
 
 
             PanelClienteControlador controlador = loader.getController();
-            controlador.inicializarDatos(usuario);
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setScene(scene);

@@ -76,4 +76,6 @@ public class RegistroControlador {
         Stage stage = (Stage) txtIdentificacion.getScene().getWindow();
         stage.close();
     }
+
+
 }

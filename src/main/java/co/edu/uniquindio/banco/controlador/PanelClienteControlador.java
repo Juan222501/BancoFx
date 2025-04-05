@@ -4,10 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-import co.edu.uniquindio.banco.modelo.entidades.Banco;
-import co.edu.uniquindio.banco.modelo.entidades.BilleteraVirtual;
-import co.edu.uniquindio.banco.modelo.entidades.Transaccion;
-import co.edu.uniquindio.banco.modelo.entidades.Usuario;
+import co.edu.uniquindio.banco.modelo.entidades.*;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,6 +25,7 @@ public class PanelClienteControlador {
 
     private Usuario usuario;
     private BilleteraVirtual billetera;
+    Sesion sesion = Sesion.getInstancia();
 
     @FXML
     private ResourceBundle resources;
@@ -77,7 +75,7 @@ public class PanelClienteControlador {
     void initialize() {
 
 
-
+        inicializarDatos(sesion.getUsuario());
         ColFecha.setCellValueFactory(celda ->
                 new SimpleStringProperty(celda.getValue().getFecha().toString()));
 
@@ -98,6 +96,8 @@ public class PanelClienteControlador {
                 new SimpleFloatProperty(celda.getValue().getMonto()).asObject());
 
         buttonTransferir.setOnAction(this::buttonTransferir);
+        ButtonCerrarSesion.setOnAction(this::ButtonCerrarSesion);
+        ButtonConsultar.setOnAction(this::ButtoConsultar);
 
 
 
@@ -111,6 +111,12 @@ public class PanelClienteControlador {
         NumeroDeCuentaLabel.setText("Nro. Cuenta: " + billetera.getNumero());
         actualizarDatosTabla();
 
+
+    }
+
+    public void ButtoConsultar(ActionEvent actionEvent){
+        Exception e = new Exception();
+        mostrarSaldo(billetera.consultarSaldo(), Alert.AlertType.INFORMATION);
 
     }
 
@@ -132,6 +138,7 @@ public class PanelClienteControlador {
             stage.setTitle(tituloVentana);
             stage.setResizable(false);
             stage.show();
+            cerrarVentana();
 
 
         } catch (Exception e) {
@@ -139,6 +146,33 @@ public class PanelClienteControlador {
             e.printStackTrace();
         }
     }
+
+    public void ButtonCerrarSesion(ActionEvent actionEvent) {
+        navegarVentanaPrincipal("/inicio.fxml", "Banco");
+    }
+
+    private void navegarVentanaPrincipal(String rutaFxml, String tituloVentana) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFxml));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle(tituloVentana);
+            stage.setResizable(false);
+            stage.show();
+            cerrarVentana();
+
+
+        } catch (Exception e) {
+            crearAlerta("No se pudo abrir la ventana: " + e.getMessage(), Alert.AlertType.ERROR);
+            e.printStackTrace();
+        }
+    }
+
+
+
 
     private void crearAlerta(String mensaje, Alert.AlertType tipo) {
         Alert alert = new Alert(tipo);
@@ -154,7 +188,21 @@ public class PanelClienteControlador {
                 .collect(Collectors.toCollection(FXCollections::observableArrayList));
         TablaTransacciones.setItems(transacciones);
     }
+    public void cerrarVentana(){
+        Stage ventanaActual = (Stage) buttonTransferir.getScene().getWindow();
+        ventanaActual.close();
+    }
 
+    public void mostrarSaldo(float saldo, Alert.AlertType tipo){// Asumiendo que tienes este método
+        String mensaje = "Tu saldo actual es: $" + String.format("%.2f", saldo);
+
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("Saldo disponible");
+        alerta.setHeaderText("Información de saldo");
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+
+    }
 
 
 }
