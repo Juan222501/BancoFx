@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce0db368-8fd8-4eb4-a5c5-3a7b6d4af6f7" name="Changes" comment="CodeV1.3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/BancoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/BancoApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/PanelClienteControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/PanelClienteControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/TransferenciaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/TransferenciaControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Banco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/BilleteraVirtual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/BilleteraVirtual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Transaccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Transaccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/enums/TipoTransaccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/enums/TipoTransaccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/BancoApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/BancoApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/PanelClienteControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/PanelClienteControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/TransferenciaControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/TransferenciaControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/modelo/entidades/Banco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/modelo/entidades/Banco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/modelo/entidades/BilleteraVirtual.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/modelo/entidades/BilleteraVirtual.class" afterDir="false" />
-    </list>
+    <list default="true" id="ce0db368-8fd8-4eb4-a5c5-3a7b6d4af6f7" name="Changes" comment="CodeV1.4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +106,7 @@
       <updated>1743605621689</updated>
       <workItem from="1743634318816" duration="4279000" />
       <workItem from="1743805150317" duration="18010000" />
-      <workItem from="1743869729082" duration="6429000" />
+      <workItem from="1743869729082" duration="6806000" />
     </task>
     <task id="LOCAL-00001" summary="V1.0">
       <option name="closed" value="true" />
@@ -163,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743829013353</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="CodeV1.4">
+      <option name="closed" value="true" />
+      <created>1743876555387</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743876555387</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +178,8 @@
     <MESSAGE value="CodeV1.1" />
     <MESSAGE value="CodeV1.2" />
     <MESSAGE value="CodeV1.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="CodeV1.3" />
+    <MESSAGE value="CodeV1.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="CodeV1.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

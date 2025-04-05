@@ -101,9 +101,6 @@ public class TransferenciaControlador {
         CategoriaBox.getSelectionModel().clearSelection();
     }
 
-    private String generarId() {
-        return "T-" + System.currentTimeMillis();
-    }
 
     private void mostrarAlerta(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
