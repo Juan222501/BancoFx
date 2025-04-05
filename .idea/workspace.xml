@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce0db368-8fd8-4eb4-a5c5-3a7b6d4af6f7" name="Changes" comment="CodeV1.1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/BancoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/BancoApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/LoginControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/LoginControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/PanelClienteControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/PanelClienteControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/RegistroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/RegistroControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/TransferenciaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/TransferenciaControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Banco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/BilleteraVirtual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/BilleteraVirtual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/panelCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/panelCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/LoginControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/LoginControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/PanelClienteControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/PanelClienteControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/TransferenciaControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/TransferenciaControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/panelCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/panelCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/transferencia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transferencia.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="ce0db368-8fd8-4eb4-a5c5-3a7b6d4af6f7" name="Changes" comment="CodeV1.2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743605621689</updated>
       <workItem from="1743634318816" duration="4279000" />
-      <workItem from="1743805150317" duration="16088000" />
+      <workItem from="1743805150317" duration="16498000" />
     </task>
     <task id="LOCAL-00001" summary="V1.0">
       <option name="closed" value="true" />
@@ -147,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743638979057</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CodeV1.2">
+      <option name="closed" value="true" />
+      <created>1743828961705</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743828961705</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +159,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="V1.0" />
     <MESSAGE value="CodeV1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="CodeV1.1" />
+    <MESSAGE value="CodeV1.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="CodeV1.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
