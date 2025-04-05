@@ -7,14 +7,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox prefHeight="600.0" prefWidth="800.0" spacing="30.0" style="-fx-padding: 30" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.PanelClienteControlador">
    <children>
       <Label text="Panel Principal de administración" />
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="500.0">
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="400.0">
          <children>
-            <Label fx:id="LabelDeBievenida" text="Bievenida..." />
-            <Label fx:id="NumeroDeCuentaLabel" text="Numero de cuenta" />
+            <Label fx:id="LabelDeBievenida" prefHeight="19.0" prefWidth="177.0" text="Bievenida..." />
+            <Label fx:id="NumeroDeCuentaLabel" prefHeight="19.0" prefWidth="168.0" text="Numero de cuenta" />
          </children>
       </HBox>
       <TableView fx:id="TablaTransacciones" prefHeight="350.0" prefWidth="740.0">

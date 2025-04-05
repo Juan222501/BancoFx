@@ -40,7 +40,11 @@ public class BilleteraVirtual {
     public void depositar(float monto, Transaccion transaccion) throws Exception {
 
         if (monto <= 0){
-            throw new Exception("El monto a retirar debe ser mayor a cero");
+            throw new Exception("El monto a depositar debe ser mayor a cero");
+        }
+
+        if (transaccion.getBilleteraOrigen() == null){
+            throw new Exception("La transacción no tiene una billetera origen asignada");
         }
 
         saldo += monto;

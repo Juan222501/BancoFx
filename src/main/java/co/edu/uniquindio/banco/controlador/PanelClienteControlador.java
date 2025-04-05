@@ -2,13 +2,28 @@ package co.edu.uniquindio.banco.controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
+import co.edu.uniquindio.banco.modelo.entidades.Banco;
+import co.edu.uniquindio.banco.modelo.entidades.BilleteraVirtual;
+import co.edu.uniquindio.banco.modelo.entidades.Transaccion;
+import co.edu.uniquindio.banco.modelo.entidades.Usuario;
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 public class PanelClienteControlador {
+
+    private Usuario usuario;
+    private BilleteraVirtual billetera;
 
     @FXML
     private ResourceBundle resources;
@@ -23,19 +38,19 @@ public class PanelClienteControlador {
     private Button ButtonConsultar;
 
     @FXML
-    private TableColumn<?, ?> ColCategoria;
+    private TableColumn<Transaccion,String> ColCategoria;
 
     @FXML
-    private TableColumn<?, ?> ColFecha;
+    private TableColumn<Transaccion,String> ColFecha;
 
     @FXML
-    private TableColumn<?, ?> ColTipo;
+    private TableColumn<Transaccion, String> ColTipo;
 
     @FXML
-    private TableColumn<?, ?> ColUsuario;
+    private TableColumn<Transaccion, String> ColUsuario;
 
     @FXML
-    private TableColumn<?, ?> ColValor;
+    private TableColumn<Transaccion,Float> ColValor;
 
     @FXML
     private Label LabelDeBievenida;
@@ -44,25 +59,85 @@ public class PanelClienteControlador {
     private Label NumeroDeCuentaLabel;
 
     @FXML
-    private TableView<?> TablaTransacciones;
+    private TableView<Transaccion> TablaTransacciones;
 
     @FXML
     private Button buttonTransferir;
 
+    private final Banco banco = Banco.getInstance();
+
     @FXML
     void initialize() {
-        assert ButtonCerrarSesion != null : "fx:id=\"ButtonCerrarSesion\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert ButtonConsultar != null : "fx:id=\"ButtonConsultar\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert ColCategoria != null : "fx:id=\"ColCategoria\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert ColFecha != null : "fx:id=\"ColFecha\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert ColTipo != null : "fx:id=\"ColTipo\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert ColUsuario != null : "fx:id=\"ColUsuario\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert ColValor != null : "fx:id=\"ColValor\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert LabelDeBievenida != null : "fx:id=\"LabelDeBievenida\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert NumeroDeCuentaLabel != null : "fx:id=\"NumeroDeCuentaLabel\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert TablaTransacciones != null : "fx:id=\"TablaTransacciones\" was not injected: check your FXML file 'panelCliente.fxml'.";
-        assert buttonTransferir != null : "fx:id=\"buttonTransferir\" was not injected: check your FXML file 'panelCliente.fxml'.";
 
+        ColFecha.setCellValueFactory(celda ->
+                new SimpleStringProperty(celda.getValue().getFecha().toString()));
+
+        ColTipo.setCellValueFactory(celda -> {
+            BilleteraVirtual billeteraActual = this.billetera;
+            String tipo = (celda.getValue().getBilleteraOrigen() == billeteraActual) ? "Salida" : "Entrada";
+            return new SimpleStringProperty(tipo);
+        });
+
+        ColCategoria.setCellValueFactory(celda ->
+                new SimpleStringProperty(celda.getValue().getTipo().name()));
+
+        ColUsuario.setCellValueFactory(celda -> {
+            String nombre = (celda.getValue().getBilleteraOrigen() == billetera) ?
+                    celda.getValue().getBilleteraDestino().getUsuario().getNombre() :
+                    celda.getValue().getBilleteraOrigen().getUsuario().getNombre();
+            return new SimpleStringProperty(nombre);
+        });
+
+        ColValor.setCellValueFactory(celda ->
+                new SimpleFloatProperty(celda.getValue().getMonto()).asObject());
+
+        buttonTransferir.setOnAction(this::buttonTransferir);
+    }
+
+    public void inicializarDatos(Usuario usuario) {
+        this.usuario = usuario;
+        this.billetera = banco.buscarBilleteraUsuario(usuario.getId());
+
+        LabelDeBievenida.setText("¡Bienvenido, " + usuario.getNombre() + "!");
+        NumeroDeCuentaLabel.setText("Nro. Cuenta: " + billetera.getNumero());
+
+        ObservableList<Transaccion> transacciones = billetera.obtenerTransacciones()
+                .stream()
+                .collect(Collectors.toCollection(FXCollections::observableArrayList));
+
+        TablaTransacciones.setItems(transacciones);
+    }
+
+    public void buttonTransferir(ActionEvent actionEvent) {
+        navegarVentana("/transferencia.fxml", "Banco - Panel Cliente");
+    }
+
+    private void navegarVentana(String rutaFxml, String tituloVentana) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFxml));
+            Parent root = loader.load();
+
+            TransferenciaControlador controlador = loader.getController();
+            controlador.inicializarDatos(billetera);
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle(tituloVentana);
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (Exception e) {
+            crearAlerta("No se pudo abrir la ventana: " + e.getMessage(), Alert.AlertType.ERROR);
+            e.printStackTrace();
+        }
+    }
+
+    private void crearAlerta(String mensaje, Alert.AlertType tipo) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle("Mensaje del sistema");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 
 }
