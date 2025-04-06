@@ -4,35 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce0db368-8fd8-4eb4-a5c5-3a7b6d4af6f7" name="Changes" comment="CodeV1.5">
+    <list default="true" id="ce0db368-8fd8-4eb4-a5c5-3a7b6d4af6f7" name="Changes" comment="CodeV1.1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/RecargarCuenta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/recargarcuenta.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/BancoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/BancoApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/InicioControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/InicioControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/LoginControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/LoginControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/PanelClienteControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/PanelClienteControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/RegistroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/RegistroControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/TransferenciaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/TransferenciaControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Banco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/BilleteraVirtual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/BilleteraVirtual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Sesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/modelo/entidades/Sesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/inicio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/panelCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/panelCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/registro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/registro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/transferencia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/transferencia.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/BancoApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/BancoApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/InicioControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/InicioControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/LoginControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/LoginControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/PanelClienteControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/PanelClienteControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/RegistroControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/RegistroControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/TransferenciaControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/uniquindio/banco/controlador/TransferenciaControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/inicio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/panelCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/panelCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/registro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/registro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/transferencia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transferencia.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -65,12 +42,12 @@
     &quot;assignee&quot;: &quot;Juan222501&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Juan222501/BancoFx&quot;,
-    &quot;accountId&quot;: &quot;8660f2ec-3a5d-4e1b-b717-5ff97fb433be&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Juan222501/BancoFx.git",
+    "accountId": "7b445c0e-6843-416c-b3f9-f7cbf9e7efb6"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -82,9 +59,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2vB5RuvKNKNeJYZKOLUzgwOX1Sp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -103,7 +78,6 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -130,8 +104,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
       </set>
     </attachedChunks>
   </component>
@@ -143,17 +117,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743605621689</updated>
-      <workItem from="1743634318816" duration="4279000" />
-      <workItem from="1743805150317" duration="18010000" />
-      <workItem from="1743869729082" duration="7143000" />
-      <workItem from="1743880255582" duration="7527000" />
-      <workItem from="1743887892162" duration="52000" />
-      <workItem from="1743887991248" duration="203000" />
-      <workItem from="1743888234247" duration="12000" />
-      <workItem from="1743888284965" duration="437000" />
-      <workItem from="1743888803046" duration="8349000" />
-      <workItem from="1743898511504" duration="5024000" />
-      <workItem from="1743903610480" duration="5030000" />
+      <workItem from="1743634318816" duration="3731000" />
+      <workItem from="1743954140088" duration="1072000" />
     </task>
     <task id="LOCAL-00001" summary="V1.0">
       <option name="closed" value="true" />
@@ -171,55 +136,7 @@
       <option name="project" value="LOCAL" />
       <updated>1743638831991</updated>
     </task>
-    <task id="LOCAL-00003" summary="CodeV1.1">
-      <option name="closed" value="true" />
-      <created>1743638979057</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1743638979057</updated>
-    </task>
-    <task id="LOCAL-00004" summary="CodeV1.2">
-      <option name="closed" value="true" />
-      <created>1743828961705</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1743828961705</updated>
-    </task>
-    <task id="LOCAL-00005" summary="CodeV1.3">
-      <option name="closed" value="true" />
-      <created>1743829013353</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1743829013353</updated>
-    </task>
-    <task id="LOCAL-00006" summary="CodeV1.4">
-      <option name="closed" value="true" />
-      <created>1743876555387</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1743876555387</updated>
-    </task>
-    <task id="LOCAL-00007" summary="CodeV1.4">
-      <option name="closed" value="true" />
-      <created>1743876808828</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1743876808828</updated>
-    </task>
-    <task id="LOCAL-00008" summary="CodeV1.5">
-      <option name="closed" value="true" />
-      <created>1743885219904</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1743885219904</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,10 +156,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="V1.0" />
     <MESSAGE value="CodeV1.1" />
-    <MESSAGE value="CodeV1.2" />
-    <MESSAGE value="CodeV1.3" />
-    <MESSAGE value="CodeV1.4" />
-    <MESSAGE value="CodeV1.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="CodeV1.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="CodeV1.1" />
   </component>
 </project>
