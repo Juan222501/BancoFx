@@ -1,15 +1,21 @@
 package co.edu.uniquindio.banco.controlador;
 
+import co.edu.uniquindio.banco.BancoApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 /**
- * Clase que representa el controlador de la vista Inicio
+ * Controlador para la vista de inicio del sistema bancario.
+ * Permite la navegación hacia la vista de inicio de sesión o registro de cliente.
+ *
  * @author caflorezvi
  */
 public class InicioControlador {
@@ -21,55 +27,56 @@ public class InicioControlador {
     private Button irRegistroCliente;
 
     /**
-     * Método que permite ir a la vista de Iniciar Sesión
-     * @param actionEvent Evento que representa el clic del botón
+     * Evento que se activa al hacer clic en el botón de "Iniciar Sesión".
+     * Navega a la ventana de inicio de sesión.
+     *
+     * @param actionEvent Evento generado por el botón.
      */
     public void irIniciarSesion(ActionEvent actionEvent) {
         navegarVentana("/login.fxml", "Banco - Iniciar Sesión");
     }
 
     /**
-     * Método que permite ir a la vista de Registro de Cliente
-     * @param actionEvent Evento que representa el clic del botón
+     * Evento que se activa al hacer clic en el botón de "Registrarse".
+     * Navega a la ventana de registro de cliente.
+     *
+     * @param actionEvent Evento generado por el botón.
      */
     public void irRegistroCliente(ActionEvent actionEvent) {
         navegarVentana("/registro.fxml", "Banco - Registro de Cliente");
     }
 
     /**
-     * Método que permite ir a la venana indicada por el nombre del archivo FXML
-     * @param nombreArchivoFxml Nombre del archivo FXML
-     * @param tituloVentana Título de la ventana
+     * Abre una nueva ventana a partir de un archivo FXML y cierra la ventana actual.
+     *
+     * @param nombreArchivoFxml Ruta del archivo FXML que define la interfaz a cargar.
+     * @param tituloVentana     Título de la nueva ventana.
      */
     public void navegarVentana(String nombreArchivoFxml, String tituloVentana) {
         try {
-
-            // Cargar la vista
             FXMLLoader loader = new FXMLLoader(getClass().getResource(nombreArchivoFxml));
             Parent root = loader.load();
 
-            // Crear la escena
             Scene scene = new Scene(root);
-
-            // Crear un nuevo escenario (ventana)
             Stage stage = new Stage();
+            stage.getIcons().add(new Image(Objects.requireNonNull(BancoApp.class.getResourceAsStream("/img/S.png"))));
             stage.setScene(scene);
             stage.setResizable(false);
             stage.setTitle(tituloVentana);
-
-            // Mostrar la nueva ventana
             stage.show();
 
             cerrarVentana();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void cerrarVentana(){
+    /**
+     * Cierra la ventana actual donde se encuentra este controlador.
+     */
+    public void cerrarVentana() {
         Stage ventanaActual = (Stage) irIniciarSesion.getScene().getWindow();
         ventanaActual.close();
-
     }
 }

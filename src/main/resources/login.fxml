@@ -4,19 +4,38 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="center" fillWidth="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" spacing="30.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.LoginControlador">
+<VBox alignment="center" fillWidth="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: #313443;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.LoginControlador">
    <children>
-      <Label text="Iniciar sesión">
+      <Label text="Inicio de sesión" textFill="#cccfd9">
          <font>
-            <Font size="18.0" />
-         </font></Label>
-      <GridPane alignment="CENTER" hgap="10.0" pickOnBounds="false" prefHeight="64.0" prefWidth="366.0" vgap="10.0">
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <effect>
+            <Glow>
+               <input>
+                  <DropShadow />
+               </input>
+            </Glow>
+         </effect></Label>
+      <ImageView fitHeight="42.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/usuario.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <GridPane alignment="CENTER" hgap="15.0" pickOnBounds="false" prefHeight="64.0" prefWidth="366.0" vgap="15.0">
         <columnConstraints>
           <ColumnConstraints />
           <ColumnConstraints />
@@ -26,12 +45,39 @@
           <RowConstraints />
         </rowConstraints>
          <children>
-            <Label prefHeight="19.0" prefWidth="176.0" text="Numero de identificación" />
-            <TextField fx:id="IdTextField" alignment="TOP_LEFT" prefHeight="27.0" prefWidth="88.0" GridPane.columnIndex="1" />
-            <Label text="Contraseña" GridPane.rowIndex="1" />
-            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="19.0" prefWidth="176.0" text="Numero de identificación" textFill="#cccfd9">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect></Label>
+            <TextField fx:id="IdTextField" alignment="TOP_LEFT" prefHeight="27.0" prefWidth="88.0" promptText="Ingrese su ID" GridPane.columnIndex="1">
+               <effect>
+                  <DropShadow />
+               </effect></TextField>
+            <Label text="Contraseña" textFill="#cccfd9" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect></Label>
+            <PasswordField fx:id="passwordField" promptText="Ingrese su contraseña" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <effect>
+                  <DropShadow />
+               </effect></PasswordField>
          </children>
       </GridPane>
-      <Button fx:id="IniciarSesionButton" mnemonicParsing="false" text="Iniciar sesión" />
+      <Button fx:id="IniciarSesionButton" mnemonicParsing="false" style="-fx-background-color: #72e97b;" text="Iniciar sesión">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow>
+               <input>
+                  <DropShadow />
+               </input></Glow>
+         </effect></Button>
    </children>
 </VBox>
