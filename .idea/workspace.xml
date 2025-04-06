@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce0db368-8fd8-4eb4-a5c5-3a7b6d4af6f7" name="Changes" comment="CodeV1.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/RecargarCuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/recargarcuenta.fxml" afterDir="false" />
+    <list default="true" id="ce0db368-8fd8-4eb4-a5c5-3a7b6d4af6f7" name="Changes" comment="RecargarCuenta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/RecargarCuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/banco/controlador/RecargarCuenta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743605621689</updated>
       <workItem from="1743634318816" duration="3731000" />
-      <workItem from="1743954140088" duration="1072000" />
+      <workItem from="1743954140088" duration="2446000" />
     </task>
     <task id="LOCAL-00001" summary="V1.0">
       <option name="closed" value="true" />
@@ -136,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743638831991</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="RecargarCuenta">
+      <option name="closed" value="true" />
+      <created>1743955333680</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743955333680</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +162,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="V1.0" />
     <MESSAGE value="CodeV1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="CodeV1.1" />
+    <MESSAGE value="RecargarCuenta" />
+    <option name="LAST_COMMIT_MESSAGE" value="RecargarCuenta" />
   </component>
 </project>

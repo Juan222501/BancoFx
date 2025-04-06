@@ -1,38 +1,90 @@
 package co.edu.uniquindio.banco.controlador;
 
+
+import co.edu.uniquindio.banco.modelo.entidades.Banco;
+import co.edu.uniquindio.banco.modelo.entidades.BilleteraVirtual;
+import co.edu.uniquindio.banco.modelo.entidades.Transaccion;
+import co.edu.uniquindio.banco.modelo.enums.Categoria;
+import co.edu.uniquindio.banco.modelo.enums.TipoTransaccion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Alert;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.awt.*;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class RecargarCuenta {
 
     @FXML
-    private ResourceBundle resources;
+    private TextField txtNumeroCuenta;
 
     @FXML
-    private URL location;
+    private TextField txtValorRecarga;
 
-    @FXML
-    private TextField txtNombre;
+    private final Banco banco = Banco.getInstance();
 
-    @FXML
-    private TextField txtIdentificacion;
-
+    /**
+     * Método que se ejecuta al presionar el botón de recargar.
+     */
     @FXML
     void recargar(ActionEvent event) {
-        // Aquí va la lógica para recargar la cuenta
-        String nombre = txtNombre.getText();
-        String identificacion = txtIdentificacion.getText();
+        String numeroCuenta = txtNumeroCuenta.getText().trim();
+        String valorTexto = txtValorRecarga.getText().trim();
 
-        System.out.println("Recargando cuenta para: " + nombre + " - ID: " + identificacion);
+        if (numeroCuenta.isEmpty() || valorTexto.isEmpty()) {
+            mostrarAlerta(Alert.AlertType.WARNING, "Campos vacíos", "Por favor, ingresa todos los datos.");
+            return;
+        }
+
+        float valor;
+        try {
+            valor = Float.parseFloat(valorTexto);
+            if (valor <= 0) {
+                throw new NumberFormatException("El monto debe ser mayor a cero.");
+            }
+        } catch (NumberFormatException e) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Valor inválido", e.getMessage());
+            return;
+        }
+
+        try {
+            BilleteraVirtual billetera = banco.buscarBilletera(numeroCuenta);
+            if (billetera == null) {
+                throw new Exception("La billetera no existe.");
+            }
+
+            Transaccion transaccion = new Transaccion(
+                    TipoTransaccion.ENTRADA,
+                    UUID.randomUUID().toString(),
+                    valor,
+                    LocalDateTime.now(),
+                    Categoria.RECARGA,
+                    billetera,
+                    billetera,
+                    0
+            );
+
+            billetera.depositar(valor, transaccion);
+
+            mostrarAlerta(Alert.AlertType.INFORMATION, "Éxito", "Cuenta recargada correctamente.");
+            limpiarCampos();
+
+        } catch (Exception e) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Error", e.getMessage());
+        }
     }
 
-    @FXML
-    void initialize() {
-        assert txtNombre != null : "fx:id=\"txtNombre\" was not injected: check your FXML file 'recargarcuenta.fxml'.";
-        assert txtIdentificacion != null : "fx:id=\"txtIdentificacion\" was not injected: check your FXML file 'recargarcuenta.fxml'.";
+    private void limpiarCampos() {
+        txtNumeroCuenta.clear();
+        txtValorRecarga.clear();
+    }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 }
