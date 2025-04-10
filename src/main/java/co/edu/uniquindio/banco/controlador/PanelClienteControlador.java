@@ -40,6 +40,8 @@ public class PanelClienteControlador {
     @FXML private Button btnConsultarSaldo;
     @FXML private Button btnTransferir;
     @FXML private Button btnActualizarDatos;
+    @FXML
+    private Button btnRecargar;
 
     @FXML private TableView<Transaccion> tablaTransacciones;
     @FXML private TableColumn<Transaccion, String> colCategoria;
@@ -75,6 +77,7 @@ public class PanelClienteControlador {
         btnCerrarSesion.setOnAction(this::cerrarSesion);
         btnConsultarSaldo.setOnAction(this::consultarSaldo);
         btnActualizarDatos.setOnAction(this::actualizarDatosUsuario);
+        btnRecargar.setOnAction(this::recargarCuenta);
     }
 
     /**
@@ -176,6 +179,10 @@ public class PanelClienteControlador {
      */
     private void cerrarSesion(ActionEvent event) {
         cerrarSesion();
+    }
+
+    private void recargarCuenta(ActionEvent event) {
+        abrirVentana("/recargarcuenta.fxml", "Recargar Cuenta");
     }
 
     /**
