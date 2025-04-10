@@ -76,9 +76,9 @@
             <DropShadow />
          </effect>
       </TableView>
-      <HBox prefHeight="73.0" prefWidth="793.0" spacing="350.0">
+      <HBox prefHeight="73.0" prefWidth="793.0" spacing="150.0">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="320.0" spacing="15.0">
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="508.0" spacing="15.0">
                <children>
                   <Button fx:id="btnCerrarSesion" alignment="CENTER" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" style="-fx-background-color: #e3807e;" text="Cerrar sesión" textFill="WHITE">
                      <font>
@@ -111,6 +111,11 @@
                            </input>
                         </DropShadow>
                      </effect>
+                  </Button>
+                  <Button fx:id="btnRecargar" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #5499c7;" text="Recargar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
